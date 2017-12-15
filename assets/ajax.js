@@ -6,7 +6,9 @@ $("#search").click(function() {
     var recordsNumber = $("#recordsNumber").val();
 })
 
-
+$("#clearResults").click(function {
+    $("#articles, #searchTerms, #startYear, #endYear, #recordsNumber").empty();
+});
 
 var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     queryURL += '?' + $.param({
@@ -26,6 +28,11 @@ var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
           var info = $("<div>");
 
           info.addclass("info");
+
+          
+          
+          $("#articles").prepend(response);
+
 
 
           
