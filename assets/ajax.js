@@ -1,12 +1,14 @@
 
-$("#search").click(function() {
+
+
+$("#search").on("click", function() {
     var searchTerms = $("#searchTerms").val();
     var startYear = $("#startYear").val();
     var endYear = $("#endYear").val();
     var recordsNumber = $("#recordsNumber").val();
 })
 
-$("#clearResults").click(function {
+$("#clearResults").on("click" function() {
     $("#articles, #searchTerms, #startYear, #endYear, #recordsNumber").empty();
 });
 
@@ -29,9 +31,10 @@ var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 
           info.addclass("info");
 
-          
-          
+          var infoURL = response.queryURL;
+
           $("#articles").prepend(response);
+          $("#articles").append(infoURL);
 
 
 
